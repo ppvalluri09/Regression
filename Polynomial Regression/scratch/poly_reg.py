@@ -68,8 +68,7 @@ def scatter(X, y):
 # Function to plot the best fit line
 def plot_best_fit_line(X, y, y_pred):
     plt.scatter(X, y, s=10)
-    plt.pause(15)
-    plt.plot(X, y_pred, c='r')
+    plt.plot(X, y_pred, c='r')      # Does not show this plot for some reason
     plt.xlabel('Features')
     plt.ylabel('Labels')
     plt.title('Best Fit Line')
@@ -82,7 +81,7 @@ var = 1
 FRAMES = 20
 # Making the data
 X = np.array([generate_data(mean, var, FRAMES)])
-y = 1.0 + (2.0 * X**2) + np.random.normal(0, 1, FRAMES)
+y = 1.0 + (2.0 * X**2) + np.random.normal(-10, 10, FRAMES)
 
 # scatter(X, y)
 poly = Poly(FRAMES, degree=2)
